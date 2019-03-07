@@ -1,0 +1,24 @@
+{
+  "name": "crud-rest-api",
+  "version": "1.0.0",
+  "description": "A simple CRUD RESTful API with authentication build with Node.js, express and MongoDB Atlas.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "Ahmed Karaman",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.0",
+    "mongoose": "^5.4.17",
+    "mongoose-timestamp": "^0.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.1",
+    "nodemon": "^1.18.10"
+  }
+}

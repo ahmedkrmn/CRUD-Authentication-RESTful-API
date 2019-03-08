@@ -34,6 +34,8 @@ Other packages:
    npm run start
    ```
 
+**OR ... You can use the live deployed version [here](https://dj-restapi-express.herokuapp.com/) instead.**
+
 ## Features
 
 - View all producers in the database
@@ -66,8 +68,11 @@ Other packages:
 - **Notes:**
 
   - Use any API client for testing, [example](https://www.getpostman.com/downloads/).
+
   - All sent and received data is in [JSON](https://www.json.org/) format.
-  - We'll be using port 3000
+
+  - We'll be using port 3000 on local host.
+    You can use the live version instead if you want. Just replace `http://localhost:3000` with `https://dj-restapi-express.herokuapp.com`.
 
 - `GET` `http://localhost:3000/producer` :
 

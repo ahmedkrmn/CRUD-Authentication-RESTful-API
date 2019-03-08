@@ -1,6 +1,6 @@
 # :dancer::musical_note: EDM Producers API
 
-An RESTful API built with [Express.js](https://expressjs.com/) and [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
+A RESTful API built with [Express.js](https://expressjs.com/) and [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
 
 Other packages:
 

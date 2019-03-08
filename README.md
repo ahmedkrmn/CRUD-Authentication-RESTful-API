@@ -168,7 +168,7 @@ Other packages:
 
 - `POST` `http://localhost:3000/producer`:
 
-  *Request:*
+  ***Request:***
 
   ```json
     {
@@ -178,17 +178,17 @@ Other packages:
     }
   ```
 
-  *Response:*
+  ***Response:***
 
   **Status**: 401 Unauthorized
 
   **Message**: Please Sign in to continue.
 
-- Database modification operations require authentication. We will need to create an account.
+- **Database modification operations require authentication. We will need to create an account.**
 
 - `POST` `http://localhost:3000/user/signup`:
 
-  *Request:*
+  ***Request:***
 
   ```json
   {
@@ -197,7 +197,7 @@ Other packages:
   }
   ```
 
-  *Response:*
+  ***Response:***
 
   **Status**: 201 Created
 
@@ -205,7 +205,7 @@ Other packages:
 
 - `POST` `http://localhost:3000/user/signin`:
 
-  *Request:*
+  ***Request:***
 
   ```json
   {
@@ -214,7 +214,7 @@ Other packages:
   }
   ```
 
-  *Response:*
+  ***Response:***
 
   **Status**: 200 OK
 
@@ -228,11 +228,11 @@ Other packages:
   }
   ```
 
-- Now you can use this token when performing DB modification operations. This token expires after 15 minutes, you can sign in again to receive a new one.
+- **Now you can use this token when performing DB modification operations. This token expires after 15 minutes, you can sign in again to receive a new one.**
 
 - `POST` `http://localhost:3000/producer`:
 
-  *Request:*
+  ***Request:***
 
   ```json
   {
@@ -242,7 +242,7 @@ Other packages:
   }
   ```
 
-  *Response:*
+  ***Response:***
 
   **Status**: 201 Created
 
@@ -262,7 +262,7 @@ Other packages:
 
 - `PUT`  `http://localhost:3000/producer/5c81f3b9adf5352a44658b8b`:
 
-  *Request:*
+  ***Request:***
 
   ```json
   {
@@ -270,7 +270,7 @@ Other packages:
   }
   ```
 
-  *Response:*
+  ***Response:***
 
   Status: 201 Created
 

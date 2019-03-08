@@ -76,7 +76,7 @@ Other packages:
 
 - `GET` `http://localhost:3000/producer` :
 
-  _Response_:
+  **_Response_**:
 
   **Status**: 200 OK
 
@@ -114,7 +114,7 @@ Other packages:
 
 - `GET` `http://localhost:3000/producer/9`:
 
-  _Response_:
+  **_Response_**:
 
   **Status**: 404 Not Found
 
@@ -122,7 +122,7 @@ Other packages:
 
 - `GET` `http://localhost:3000/producer/59`:
 
-  _Response_:
+  **_Response_**:
 
   **Status**: 200 OK
 
@@ -142,7 +142,7 @@ Other packages:
 
 - `GET` `http://localhost:3000/producer/genres/trance,uplifting`:
 
-  _Response_:
+  **_Response_**:
 
   **Status**: 200 OK
 

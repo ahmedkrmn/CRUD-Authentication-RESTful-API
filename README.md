@@ -69,7 +69,7 @@ Other packages:
 
   - Use any API client for testing, [example](https://www.getpostman.com/downloads/).
 
-  - All sent and received data is in [JSON](https://www.json.org/) format.
+  - Sent and received data is in [JSON](https://www.json.org/). Please check the `models/User.js` and `models/Producer.js` files for detailed formatting.
 
   - We'll be using port 3000 on local host.
     You can use the live version instead if you want. Just replace `http://localhost:3000` with `https://dj-restapi-express.herokuapp.com`.

@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 const config = require("../config");
 
-router.post("/signin", async (req, res) => {
+router.post("/signup", async (req, res) => {
   try {
     if (!req.body.email || !req.body.pass) {
       return res.status(400).send("Please enter your email and password");
@@ -37,7 +37,7 @@ router.post("/signin", async (req, res) => {
 });
 
 //Authenticate user
-router.post("/auth", async (req, res) => {
+router.post("/signin", async (req, res) => {
   try {
     const { email, pass } = req.body;
     const user = await User.findOne({ email });

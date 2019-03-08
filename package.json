@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "A simple CRUD RESTful API with authentication build with Node.js, express and MongoDB Atlas.",
   "main": "index.js",
+  "engines": {
+    "node": "10.15.2",
+    "npm": "6.4.1"
+  },
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"

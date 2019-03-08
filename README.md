@@ -45,77 +45,71 @@ Other packages:
 
 ### Producers
 
-| Method | URI             | Action                                                  |
-| ------ | --------------- | ------------------------------------------------------- |
-| `GET`  | `/producer/` | Get all producers in the database                            |
-| `GET`  | `/producer/:rate` | Get the producer with a [DJ Mag](https://www.edmhunters.com/top-100-djs/) rating of`:rate` |
-| `GET`  | `/producer/genres/:genres` | Get all producers that produce this set of genres. `:genres` is a comma separated string of EDM genres |
-| `POST` | `/producer/` | **Requires a token**, Add a producer to the database |
-| `PUT`  | `/producer/:id` | **Requires a token**, Edit a producer with id of `:id` |
-| `DELETE`  | `/producer/:id` | **Requires a token**, Delete a producer with id of `:id` |
+| Method   | URI                        | Action                                                                                                 |
+| -------- | -------------------------- | ------------------------------------------------------------------------------------------------------ |
+| `GET`    | `/producer/`               | Get all producers in the database                                                                      |
+| `GET`    | `/producer/:rate`          | Get the producer with a [DJ Mag](https://www.edmhunters.com/top-100-djs/) rating of`:rate`             |
+| `GET`    | `/producer/genres/:genres` | Get all producers that produce this set of genres. `:genres` is a comma separated string of EDM genres |
+| `POST`   | `/producer/`               | **Requires a token**, Add a producer to the database                                                   |
+| `PUT`    | `/producer/:id`            | **Requires a token**, Edit a producer with id of `:id`                                                 |
+| `DELETE` | `/producer/:id`            | **Requires a token**, Delete a producer with id of `:id`                                               |
 
 ### Users
 
-| Method | URI           | Action                                                       |
-| ------ | ------------- | ------------------------------------------------------------ |
-| `POST` | `user/signup` | Sign up with the specified user credentials in the request   |
+| Method | URI           | Action                                                            |
+| ------ | ------------- | ----------------------------------------------------------------- |
+| `POST` | `user/signup` | Sign up with the specified user credentials in the request        |
 | `POST` | `user/signin` | Sign in with the specified user credentials to receive your token |
 
 ## Usage examples
 
 - **Notes:**
+
   - Use any API client for testing, [example](https://www.getpostman.com/downloads/).
   - All sent and received data is in [JSON](https://www.json.org/) format.
   - We'll be using port 3000
 
-- `GET` `http://localhost:3000/producer`  :
+- `GET` `http://localhost:3000/producer` :
 
-  *Response*:
+  _Response_:
 
   **Status**: 200 OK
 
   ```json
-   [
-       {
-          "genres":[
-             "trance",
-             "uplifting"
-          ],
-          "djmagrating":74,
-          "_id":"5c81ec34001a733c28c7f2f9",
-          "name":"Aly & Fila",
-          "updatedAt":"2019-03-08T04:14:44.687Z",
-          "createdAt":"2019-03-08T04:14:44.687Z",
-          "__v":0
-       },
-       {
-          "genres":[
-             "progressive"
-          ],
-          "djmagrating":59,
-          "_id":"5c81ec40001a733c28c7f2fa",
-          "name":"Deadmau5",
-          "updatedAt":"2019-03-08T04:14:56.077Z",
-          "createdAt":"2019-03-08T04:14:56.077Z",
-          "__v":0
-       },
-       {
-          "genres":[
-             "trance"
-          ],
-          "djmagrating":4,
-          "_id":"5c81ec48001a733c28c7f2fb",
-          "name":"Armin Van Buuren",
-          "updatedAt":"2019-03-08T04:15:04.665Z",
-          "createdAt":"2019-03-08T04:15:04.665Z",
-          "__v":0
-       }
-    ]
+  [
+    {
+      "genres": ["trance", "uplifting"],
+      "djmagrating": 74,
+      "_id": "5c81ec34001a733c28c7f2f9",
+      "name": "Aly & Fila",
+      "updatedAt": "2019-03-08T04:14:44.687Z",
+      "createdAt": "2019-03-08T04:14:44.687Z",
+      "__v": 0
+    },
+    {
+      "genres": ["progressive"],
+      "djmagrating": 59,
+      "_id": "5c81ec40001a733c28c7f2fa",
+      "name": "Deadmau5",
+      "updatedAt": "2019-03-08T04:14:56.077Z",
+      "createdAt": "2019-03-08T04:14:56.077Z",
+      "__v": 0
+    },
+    {
+      "genres": ["trance"],
+      "djmagrating": 4,
+      "_id": "5c81ec48001a733c28c7f2fb",
+      "name": "Armin Van Buuren",
+      "updatedAt": "2019-03-08T04:15:04.665Z",
+      "createdAt": "2019-03-08T04:15:04.665Z",
+      "__v": 0
+    }
+  ]
   ```
 
 - `GET` `http://localhost:3000/producer/9`:
 
-  *Response*:
+  _Response_:
 
   **Status**: 404 Not Found
 
@@ -123,81 +117,80 @@ Other packages:
 
 - `GET` `http://localhost:3000/producer/59`:
 
-  *Response*:
+  _Response_:
 
   **Status**: 200 OK
 
   ```json
   [
-      {
-          "genres": [
-              "progressive"
-          ],
-          "djmagrating": 59,
-          "_id": "5c81ec40001a733c28c7f2fa",
-          "name": "Deadmau5",
-          "updatedAt": "2019-03-08T04:14:56.077Z",
-          "createdAt": "2019-03-08T04:14:56.077Z",
-          "__v": 0
-      }
+    {
+      "genres": ["progressive"],
+      "djmagrating": 59,
+      "_id": "5c81ec40001a733c28c7f2fa",
+      "name": "Deadmau5",
+      "updatedAt": "2019-03-08T04:14:56.077Z",
+      "createdAt": "2019-03-08T04:14:56.077Z",
+      "__v": 0
+    }
   ]
   ```
 
 - `GET` `http://localhost:3000/producer/genres/trance,uplifting`:
 
-  *Response*:
+  _Response_:
 
   **Status**: 200 OK
 
   ```json
   [
-      {
-          "genres": [
-              "trance",
-              "uplifting"
-          ],
-          "djmagrating": 74,
-          "_id": "5c81ec34001a733c28c7f2f9",
-          "name": "Aly & Fila",
-          "updatedAt": "2019-03-08T04:14:44.687Z",
-          "createdAt": "2019-03-08T04:14:44.687Z",
-          "__v": 0
-      }
+    {
+      "genres": ["trance", "uplifting"],
+      "djmagrating": 74,
+      "_id": "5c81ec34001a733c28c7f2f9",
+      "name": "Aly & Fila",
+      "updatedAt": "2019-03-08T04:14:44.687Z",
+      "createdAt": "2019-03-08T04:14:44.687Z",
+      "__v": 0
+    }
   ]
   ```
 
 - `POST` `http://localhost:3000/producer`:
 
-  ***Request:***
+  **_Request:_**
 
   ```json
-    {
-    	"name": "Oliver Heldens",
-    	"djmagrating": 9,
-    	"genres": ["futurehouse"]
-    }
+  {
+    "name": "Oliver Heldens",
+    "djmagrating": 9,
+    "genres": ["futurehouse"]
+  }
   ```
 
-  ***Response:***
+  **_Response:_**
 
   **Status**: 401 Unauthorized
 
   **Message**: Please Sign in to continue.
 
-- **Database modification operations require authentication. We will need to create an account.**
+---
+
+**Database modification operations require authentication. We will need to create an account.**
+
+---
 
 - `POST` `http://localhost:3000/user/signup`:
 
-  ***Request:***
+  **_Request:_**
 
   ```json
   {
-  	"email": "newuser@newuser.com",
-  	"pass": "1234"
+    "email": "newuser@newuser.com",
+    "pass": "1234"
   }
   ```
 
-  ***Response:***
+  **_Response:_**
 
   **Status**: 201 Created
 
@@ -205,86 +198,85 @@ Other packages:
 
 - `POST` `http://localhost:3000/user/signin`:
 
-  ***Request:***
+  **_Request:_**
 
   ```json
   {
-  	"email": "newuser@newuser.com",
-  	"pass": "1234"
+    "email": "newuser@newuser.com",
+    "pass": "1234"
   }
   ```
 
-  ***Response:***
+  **_Response:_**
 
   **Status**: 200 OK
 
-  *Body*:
+  _Body_:
 
   ```json
   {
-      "iat": 1552019993,
-      "exp": 1552020893,
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YzgxZjE4OWVkZGJlMzQxZDQyY2IzMDciLCJlbWFpbCI6Im5ld3VzZXJAbmV3dXNlci5jb20iLCJwYXNzIjoiJDJhJDEwJGdOSHF1OVVuYXdmckxFT0xSTDJ1dC5CNktIU0MxSFJObkRDbWNKLmd1MWxkTS5VM0VGU1dLIiwidXBkYXRlZEF0IjoiMjAxOS0wMy0wOFQwNDozNzozMC4wMjFaIiwiY3JlYXRlZEF0IjoiMjAxOS0wMy0wOFQwNDozNzozMC4wMjFaIiwiX192IjowLCJpYXQiOjE1NTIwMTk5OTMsImV4cCI6MTU1MjAyMDg5M30.43jtfL8ABXo0d5ADqMFZCnCuzuliKauw7zWCAA7xPj0"
+    "iat": 1552019993,
+    "exp": 1552020893,
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YzgxZjE4OWVkZGJlMzQxZDQyY2IzMDciLCJlbWFpbCI6Im5ld3VzZXJAbmV3dXNlci5jb20iLCJwYXNzIjoiJDJhJDEwJGdOSHF1OVVuYXdmckxFT0xSTDJ1dC5CNktIU0MxSFJObkRDbWNKLmd1MWxkTS5VM0VGU1dLIiwidXBkYXRlZEF0IjoiMjAxOS0wMy0wOFQwNDozNzozMC4wMjFaIiwiY3JlYXRlZEF0IjoiMjAxOS0wMy0wOFQwNDozNzozMC4wMjFaIiwiX192IjowLCJpYXQiOjE1NTIwMTk5OTMsImV4cCI6MTU1MjAyMDg5M30.43jtfL8ABXo0d5ADqMFZCnCuzuliKauw7zWCAA7xPj0"
   }
   ```
 
-- **Now you can use this token when performing DB modification operations. This token expires after 15 minutes, you can sign in again to receive a new one.**
+---
+
+**Now you can use this token when performing DB modification operations. This token expires after 15 minutes, you can sign in again to receive a new one.**
+
+---
 
 - `POST` `http://localhost:3000/producer`:
 
-  ***Request:***
+  **_Request:_**
 
   ```json
   {
-  	"name": "Oliver Heldens",
-  	"djmagrating": 9,
-  	"genres": ["futurehouse"]
+    "name": "Oliver Heldens",
+    "djmagrating": 9,
+    "genres": ["futurehouse"]
   }
   ```
 
-  ***Response:***
+  **_Response:_**
 
   **Status**: 201 Created
 
   ```json
   {
-      "genres": [
-          "futurehouse"
-      ],
-      "djmagrating": 9,
-      "_id": "5c81f3b9adf5352a44658b8b",
-      "name": "Oliver Heldens",
-      "updatedAt": "2019-03-08T04:46:49.838Z",
-      "createdAt": "2019-03-08T04:46:49.838Z",
-      "__v": 0
+    "genres": ["futurehouse"],
+    "djmagrating": 9,
+    "_id": "5c81f3b9adf5352a44658b8b",
+    "name": "Oliver Heldens",
+    "updatedAt": "2019-03-08T04:46:49.838Z",
+    "createdAt": "2019-03-08T04:46:49.838Z",
+    "__v": 0
   }
   ```
 
-- `PUT`  `http://localhost:3000/producer/5c81f3b9adf5352a44658b8b`:
+- `PUT` `http://localhost:3000/producer/5c81f3b9adf5352a44658b8b`:
 
-  ***Request:***
+  **_Request:_**
 
   ```json
   {
-  	"genres": ["futurehouse", "electrohouse"]
+    "genres": ["futurehouse", "electrohouse"]
   }
   ```
 
-  ***Response:***
+  **_Response:_**
 
   Status: 201 Created
 
   ```json
   {
-      "genres": [
-          "futurehouse",
-          "electrohouse"
-      ],
-      "djmagrating": 9,
-      "_id": "5c81f3b9adf5352a44658b8b",
-      "name": "Oliver Heldens",
-      "updatedAt": "2019-03-08T04:49:51.919Z",
-      "createdAt": "2019-03-08T04:46:49.838Z",
-      "__v": 0
+    "genres": ["futurehouse", "electrohouse"],
+    "djmagrating": 9,
+    "_id": "5c81f3b9adf5352a44658b8b",
+    "name": "Oliver Heldens",
+    "updatedAt": "2019-03-08T04:49:51.919Z",
+    "createdAt": "2019-03-08T04:46:49.838Z",
+    "__v": 0
   }
   ```

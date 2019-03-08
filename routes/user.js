@@ -20,11 +20,11 @@ router.post("/signup", async (req, res) => {
           user.pass = hash;
           try {
             await user.save();
-            return res.status(201).send("User registered successfuly!");
+            return res.status(201).send("User registered successfully!");
           } catch (error) {
             return res
               .status(500)
-              .send("Uh oh, something is wrong, please try agains!");
+              .send("Uh oh, something is wrong, please try again!");
           }
         });
       });

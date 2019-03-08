@@ -18,7 +18,7 @@ mongoose.connection.on(
 );
 
 mongoose.connection.once("open", () => {
-  app.use("/", user);
+  app.use("/user", user);
   app.use("/producer", producer);
   console.log(`Server started on ${config.PORT}`);
 });
